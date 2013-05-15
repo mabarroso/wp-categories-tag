@@ -1,0 +1,6 @@
+/wordpress/
+/wp-cli/
+out/*
+/composer.phar
+/bin/
+/vendor/
