@@ -1,4 +1,13 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
+
+/*
+Plugin Name: Categories Tag
+Plugin URI: http://lab.mabarroso.com/categories-tag-wordpress-plugin
+Description: Allow list categories into your posts or pages
+Version: 1.0
+Author: mabarroso
+Author URI: http://www.mabarroso.com/
+*/
 
 if ( ! class_exists( 'CategoriesTag' ) ) :
 class CategoriesTag {
