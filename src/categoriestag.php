@@ -26,8 +26,50 @@ class CategoriesTag {
      * @param string $content
      * @return string
      */
-    public function append_content( $content ) {
-        return $content . "<p>Hello WordPress Unit Tests</p>";
+    public function append_content($content) {
+  		if (preg_match_all('#\[categories ([^\]]*)\]#im', $content, $tag_matches) ) {
+  			$i=0;
+				foreach ($tag_matches[1] as $params) {
+					$tag = str_replace(array('[', ']'), array("\\[", "\\]"), $tag_matches[0][$i++]);
+					if (preg_match('#id="([^"]+)"#i', $params, $param_matches) ) {
+						$category_id = $param_matches[1];
+					} else {
+						$category_id = 0;
+					}
+					$content .= "<hr/>id = $category_id && tag = $tag";
+
+					$args = array(
+						'show_option_all'    => '',
+						'orderby'            => 'name',
+						'order'              => 'ASC',
+						'style'              => 'list',
+						'show_count'         => 0,
+						'hide_empty'         => 0,
+						'use_desc_for_title' => 1,
+						'child_of'           => 0,
+						'feed'               => '',
+						'feed_type'          => '',
+						'feed_image'         => '',
+						'exclude'            => '',
+						'exclude_tree'       => '',
+						'include'            => '',
+						'hierarchical'       => 1,
+						'title_li'           => __( 'Categories' ),
+						'show_option_none'   => __('No categories'),
+						'number'             => null,
+						'echo'               => 1,
+						'depth'              => 0,
+						'current_category'   => $category_id,
+						'pad_counts'         => 0,
+						'taxonomy'           => 'category',
+						'walker'             => null
+					);
+					$content = preg_replace('#'.$tag.'#m', wp_list_categories($args), $content);
+				}
+  		} else {
+				$content .= '<hr/>not found';
+  		}
+      return $content . "<p>Hello WordPress Unit Tests</p>";
     }
 }
 
