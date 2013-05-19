@@ -34,16 +34,32 @@ class CategoriesTagTest extends WP_UnitTestCase {
 
   public function testChild() {
     $response = $this->categoriesTag->append_content('[categories id="2"]');
-    $this->assertContains('cat 2.1', $response);
-    $this->assertContains('cat 2.2', $response);
-    $this->assertContains('cat 2.3', $response);
+    $this->assertNotContains('cat 1</a>', $response);
+    $this->assertNotContains('cat 1.1',   $response);
+    $this->assertNotContains('cat 1.2',   $response);
+    $this->assertNotContains('cat 1.3',   $response);
+    $this->assertNotContains('cat 2</a>', $response);
+    $this->assertContains('cat 2.1',      $response);
+    $this->assertContains('cat 2.2',      $response);
+    $this->assertContains('cat 2.3',      $response);
+    $this->assertNotContains('cat 3</a>', $response);
+    $this->assertNotContains('cat 3.1',   $response);
+    $this->assertNotContains('cat 3.2',   $response);
+    $this->assertNotContains('cat 3.3',   $response);
   }
 
   public function testShowCount() {
     $response = $this->categoriesTag->append_content('[categories id="2" show_count="yes"]');
     $this->assertContains('cat 2.1</a> (21)', $response);
     $this->assertContains('cat 2.2</a> (22)', $response);
-    $this->assertContains('cat 2.3</a> (23)', $response);
+    $this->assertContains('cat 2.3</a> (0)', $response);
+  }
+
+  public function testHideEmpty() {
+    $response = $this->categoriesTag->append_content('[categories id="2" hide_empty="yes"]');
+    $this->assertContains('cat 2.1', $response);
+    $this->assertContains('cat 2.2', $response);
+    $this->assertNotContains('cat 2.3', $response);
   }
 
   /**

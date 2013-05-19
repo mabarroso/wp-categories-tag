@@ -15,12 +15,12 @@ INSERT INTO /*PREFIX*/wp_terms(term_id, name, slug, term_group) VALUES (33, 'cat
 INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES ( 1,  1, 'category', '', 0, 10);
 INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES (11, 11, 'category', '', 1, 11);
 INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES (12, 12, 'category', '', 1, 12);
-INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES (13, 13, 'category', '', 1, 13);
+INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES (13, 13, 'category', '', 1,  0);
 INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES ( 2,  2, 'category', '', 0, 20);
 INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES (21, 21, 'category', '', 2, 21);
 INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES (22, 22, 'category', '', 2, 22);
-INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES (23, 23, 'category', '', 2, 23);
-INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES ( 3,  3, 'category', '', 0, 30);
+INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES (23, 23, 'category', '', 2,  0);
+INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES ( 3,  3, 'category', '', 0,  0);
 INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES (31, 31, 'category', '', 3, 31);
 INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES (32, 32, 'category', '', 3, 32);
-INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES (33, 33, 'category', '', 3, 33);
+INSERT INTO /*PREFIX*/wp_term_taxonomy(term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES (33, 33, 'category', '', 3,  0);
