@@ -1,5 +1,4 @@
 <?php
-
 /*
 Plugin Name: Categories Tag
 Plugin URI: http://lab.mabarroso.com/categories-tag-wordpress-plugin
