@@ -28,6 +28,7 @@ class CategoriesTag {
    */
   public function append_content($content) {
     $show_count  = 0;
+    $hide_empty  = 0;
     $category_id = 0;
 
 		if (preg_match_all('#\[categories ([^\]]*)\]#im', $content, $tag_matches) ) {
@@ -38,6 +39,9 @@ class CategoriesTag {
 				if (preg_match('#show_count="yes"#i', $params, $param_matches) ) {
 					$show_count = 1;
 				}
+				if (preg_match('#hide_empty="yes"#i', $params, $param_matches) ) {
+					$hide_empty = 1;
+				}
 				if (preg_match('#id="([^"]+)"#i', $params, $param_matches) ) {
 					$category_id = $param_matches[1];
 				}
@@ -47,7 +51,7 @@ class CategoriesTag {
 					'order'              => 'ASC',
 					'style'              => 'list',
 					'show_count'         => $show_count,
-					'hide_empty'         => 0,
+					'hide_empty'         => $hide_empty,
 					'use_desc_for_title' => 1,
 					'child_of'           => $category_id,
 					'feed'               => '',
