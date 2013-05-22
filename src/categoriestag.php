@@ -77,8 +77,6 @@ class CategoriesTag {
 
 				$content = preg_replace('#'.$tag.'#m', $tagContent, $content);
 			}
-		} else {
-			$content .= '<hr/>not found';
 		}
     return $content;
   }
