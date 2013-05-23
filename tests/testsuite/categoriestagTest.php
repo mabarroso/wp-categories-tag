@@ -16,8 +16,7 @@ class CategoriesTagTest extends WP_UnitTestCase {
     $this->categoriesTag = $GLOBALS['CategoriesTag'];
   }
 
-  public function testRoot() {
-    $response = $this->categoriesTag->append_content('[categories id="0"]');
+  private function assertAllCategories($response) {
     $this->assertContains('cat 1</a>',  $response);
     $this->assertContains('cat 1.1',    $response);
     $this->assertContains('cat 1.2',    $response);
@@ -30,6 +29,16 @@ class CategoriesTagTest extends WP_UnitTestCase {
     $this->assertContains('cat 3.1',    $response);
     $this->assertContains('cat 3.2',    $response);
     $this->assertContains('cat 3.3',    $response);
+  }
+
+  public function testDefault() {
+    $response = $this->categoriesTag->append_content('[categories]');
+    $this->assertAllCategories($response);
+  }
+
+  public function testRoot() {
+    $response = $this->categoriesTag->append_content('[categories id="0"]');
+    $this->assertAllCategories($response);
   }
 
   public function testChild() {

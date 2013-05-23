@@ -30,7 +30,7 @@ class CategoriesTag {
     $hide_empty  = 0;
     $category_id = 0;
 
-		if (preg_match_all('#\[categories ([^\]]*)\]#im', $content, $tag_matches) ) {
+		if (preg_match_all('#\[categories *([^\]]*)\]#im', $content, $tag_matches) ) {
 			$i=0;
 			foreach ($tag_matches[1] as $params) {
 				$tag = str_replace(array('[', ']'), array("\\[", "\\]"), $tag_matches[0][$i++]);
