@@ -5,14 +5,41 @@
   Use BBCode style tags to add a list of categories into your posts or pages
 
 ##How works
+  Insert the BBCode style tag category
 ```
-  [categories id="2"]
+  [categories]
 ```
 
-[categories id="0"]
-[categories id="2"]
-[categories id="2" show_count="yes"]
-[categories id="2" hide_empty="yes"]
+  The result will be similar to:
+```html
+  <li class="cat-item cat-item-1"><a href="http://localhost/?cat=1" title="View all posts filed under cat 1">cat 1</a>
+    <ul class='children'>
+      <li class="cat-item cat-item-11"><a href="http://localhost/?cat=11" title="View all posts filed under cat 1.1">cat 1.1</a></li>
+      <li class="cat-item cat-item-12"><a href="http://localhost/?cat=12" title="View all posts filed under cat 1.2">cat 1.2</a></li>
+      <li class="cat-item cat-item-13"><a href="http://localhost/?cat=13" title="View all posts filed under cat 1.3">cat 1.3</a></li>
+    </ul>
+  </li>
+  <li class="cat-item cat-item-2"><a href="http://localhost/?cat=2" title="View all posts filed under cat 2">cat 2</a>
+    <ul class='children'>
+      <li class="cat-item cat-item-21"><a href="http://localhost/?cat=21" title="View all posts filed under cat 2.1">cat 2.1</a></li>
+      <li class="cat-item cat-item-22"><a href="http://localhost/?cat=22" title="View all posts filed under cat 2.2">cat 2.2</a></li>
+      <li class="cat-item cat-item-23"><a href="http://localhost/?cat=23" title="View all posts filed under cat 2.3">cat 2.3</a></li>
+    </ul>
+  </li>
+  <li class="cat-item cat-item-3"><a href="http://localhost/?cat=3" title="View all posts filed under cat 3">cat 3</a>
+    <ul class='children'>
+      <li class="cat-item cat-item-31"><a href="http://localhost/?cat=31" title="View all posts filed under cat 3.1">cat 3.1</a></li>
+      <li class="cat-item cat-item-32"><a href="http://localhost/?cat=32" title="View all posts filed under cat 3.2">cat 3.2</a></li>
+      <li class="cat-item cat-item-33"><a href="http://localhost/?cat=33" title="View all posts filed under cat 3.3">cat 3.3</a></li>
+    </ul>
+  </li>
+```
+
+###Options
+
+  *id* (number) Set the id of the parent category: ```[categories id="0"]``` for all categories, ```[categories id="2"]``` for categories with parent 2
+  *show_count* (yes/no) Show the number of posts in each category: ```[categories id="2" show_count="yes"]```
+  *hide_empty* (yes/no) Hide categories without posts
 
 ## Installation
 1. Upload the plugin to the `/wp-content/plugins/` directory
