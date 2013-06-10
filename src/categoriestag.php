@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Categories Tag
-Plugin URI: http://lab.mabarroso.com/categories-tag-wordpress-plugin
+Plugin URI: http://lab.mabarroso.com/en/categories-tag-wordpress-plugin
 Description: Allow list categories into your posts or pages
 Version: 1.0
 Author: mabarroso

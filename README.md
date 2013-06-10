@@ -4,6 +4,8 @@
 #Description
   Use BBCode style tags to add a list of categories into your posts or pages
 
+  Read more about in [http://lab.mabarroso.com/en/categories-tag-wordpress-plugin](http://lab.mabarroso.com/en/categories-tag-wordpress-plugin)
+
 ##How works
   Insert the BBCode style tag category
 ```
