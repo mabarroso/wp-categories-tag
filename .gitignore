@@ -1,6 +1,4 @@
+*.DS_Store
 /wordpress/
 /wp-cli/
 out/*
-/composer.phar
-/bin/
-/vendor/
