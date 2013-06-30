@@ -75,8 +75,11 @@
 ###Testing server
 #### Vagrant instalation
 You can
+
 1. Run unary test ```shell ./tools/vagrant_tests.sh ```
+
 2. Test in a Wordpress site http://localhost/wordpress-site-sandbox/
+
 3. Test in a Wordpress multisite http://localhost/wordpress-multisite-sandbox/test1/ and http://localhost/wordpress-multisite-sandbox/test2/
 
 The Wordpress admin user is named *test* with email test@test.test and password *testtest*
