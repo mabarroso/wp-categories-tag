@@ -74,11 +74,25 @@
 ##Recommended environment
 ###Testing server
 #### Vagrant instalation
+You can
+1. Run unary test ```shell ./tools/vagrant_tests.sh ```
+2. Test in a Wordpress site http://localhost/wordpress-site-sandbox/
+3. Test in a Wordpress multisite http://localhost/wordpress-multisite-sandbox/test1/ and http://localhost/wordpress-multisite-sandbox/test2/
+
+The Wordpress admin user is named *test* with email test@test.test and password *testtest*
+
+To install
   ```shell
     git clone https://github.com/mabarroso/wordpress-site-sandbox.git
     vagrant up
   ```
-  
+
+Vagrant guest port 80 must be forwaded to 8080. Any port under 1024 requires the program to be running as root. To point host port 80 to another port in Mac OS/X, use the ipfw utility.
+
+  ```shell
+    sudo ipfw add 100 fwd 127.0.0.1,8080 tcp from any to any 80 in
+  ```
+
 #### Manual instalation
 1. Create a test MyQSL database named *myapp_test* for user *root* and no password
   If you prefer other configuration, change the *tools/templates/wp-config.php* file.

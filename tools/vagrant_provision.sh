@@ -34,6 +34,22 @@ echo "Setting Apache..."
 echo "Installing git..."	 
 	apt-get -y install git >/dev/null 2>&1
 
+echo "Setting a Wordpress site..."
+	cd /var/www/
+	git clone https://github.com/mabarroso/wordpress-site-sandbox.git >/dev/null 2>&1
+	mysqladmin -u root create sanboxwordpresssimply
+	mysql -u root sanboxwordpresssimply < wordpress-site-sandbox/tools/database.sql
+
+	ln -s /vagrant/src /var/www/wordpress-site-sandbox/wp-content/plugins/categories-tag
+
+echo "Setting a Wordpress multisite..."
+	cd /var/www/
+    git clone https://github.com/mabarroso/wordpress-multisite-sandbox.git >/dev/null 2>&1
+    mysqladmin -u root create sanboxwordpressmultisite
+    mysql -u root sanboxwordpressmultisite < wordpress-multisite-sandbox/tools/database.sql
+
+	ln -s /vagrant/src /var/www/wordpress-multisite-sandbox/wp-content/plugins/categories-tag
+
 echo "Setting unitary tests..."
 	mysqladmin -u root create myapp_test >/dev/null 2>&1
 	apt-get -y install php-pear >/dev/null 2>&1
