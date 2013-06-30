@@ -73,6 +73,13 @@
 
 ##Recommended environment
 ###Testing server
+#### Vagrant instalation
+  ```shell
+    git clone https://github.com/mabarroso/wordpress-site-sandbox.git
+    vagrant up
+  ```
+  
+#### Manual instalation
 1. Create a test MyQSL database named *myapp_test* for user *root* and no password
   If you prefer other configuration, change the *tools/templates/wp-config.php* file.
   **Important: Be sure your database is only for tests, all data will be erased**
