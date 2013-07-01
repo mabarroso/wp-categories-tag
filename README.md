@@ -76,11 +76,11 @@
 #### Vagrant instalation
 You can
 
-1. Run unary test ```shell ./tools/vagrant_tests.sh ```
+1. Run unary test ```vagrant ssh -c "cd /vagrant; phpunit"```
 
-2. Test in a Wordpress site http://localhost/wordpress-site-sandbox/
+2. Test in a Wordpress site [http://localhost/wordpress-site-sandbox/](http://localhost/wordpress-site-sandbox/)
 
-3. Test in a Wordpress multisite http://localhost/wordpress-multisite-sandbox/test1/ and http://localhost/wordpress-multisite-sandbox/test2/
+3. Test in a Wordpress multisite [http://localhost/wordpress-multisite-sandbox/test1/](http://localhost/wordpress-multisite-sandbox/test1/) and [http://localhost/wordpress-multisite-sandbox/test2/](http://localhost/wordpress-multisite-sandbox/test2/)
 
 The Wordpress admin user is named *test* with email test@test.test and password *testtest*
 
@@ -90,10 +90,26 @@ To install
     vagrant up
   ```
 
-Vagrant guest port 80 must be forwaded to 8080. Any port under 1024 requires the program to be running as root. To point host port 80 to another port in Mac OS/X, use the ipfw utility.
+Vagrant guest port 80 must be forwaded to 8080. Any port under 1024 requires the program to be running as root. To point host port 80 to another port in
+
+* Mac OS/X, use the ipfw utility
 
   ```shell
     sudo ipfw add 100 fwd 127.0.0.1,8080 tcp from any to any 80 in
+  ```
+
+* Windows, use the netsh command
+
+  ```shell
+    netsh interface portproxy add v4tov4 listenport=80 listenaddress=127.0.0.1 connectport=8080 connectaddress=127.0.0.1
+  ```
+
+* Linux, accomplish the redirection with iptables
+
+  ```shell
+    iptables -A INPUT -i eth0 -p tcp --dport 80 -j ACCEPT
+    iptables -A INPUT -i eth0 -p tcp --dport 8080 -j ACCEPT
+    iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
   ```
 
 #### Manual instalation
