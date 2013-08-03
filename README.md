@@ -86,7 +86,7 @@ The Wordpress admin user is named *test* with email test@test.test and password 
 
 To install
   ```shell
-    git clone https://github.com/mabarroso/wordpress-site-sandbox.git
+    git clone https://github.com/mabarroso/wp-categories-tag.git
     vagrant up
   ```
 
